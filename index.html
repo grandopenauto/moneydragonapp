@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MoneyDragonApp is an emerging financial intelligence workspace for research, options analysis, market monitoring and brokerage-connected strategies.">
+  <meta name="theme-color" content="#090d13">
+  <title>MoneyDragonApp — Intelligence Beyond the Brokerage</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090d13;--panel:#101824;--line:#273342;--text:#f1f7fb;--sub:#a9bac8;--jade:#71e6b0;--gold:#f4c879;--blue:#8ab9ff}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:radial-gradient(circle at 83% 12%,#16312c 0,transparent 33%),radial-gradient(circle at 9% 38%,#152333 0,transparent 37%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit}a:focus-visible,button:focus-visible{outline:2px solid var(--jade);outline-offset:5px}
+    .wrap{max-width:1170px;margin:auto;padding:0 28px}
+    .sitehead{position:sticky;top:0;z-index:20;background:#090d13ed;backdrop-filter:blur(14px);border-bottom:1px solid #23303b}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;padding-top:16px;padding-bottom:16px}
+    .brand{display:inline-flex;align-items:center;gap:11px;text-decoration:none;white-space:nowrap}
+    .logo{display:grid;place-items:center;width:41px;height:41px;border:1px solid #467568;border-radius:12px;background:linear-gradient(130deg,#1b5446,#122c34);color:var(--jade);font-weight:900;letter-spacing:-1px}
+    .brand span:last-child{font-weight:800;letter-spacing:.03em}.brand span:last-child i{font-style:normal;color:var(--jade)}
+    .links{display:flex;align-items:center;gap:27px}
+    .links a{text-decoration:none;color:var(--sub);font-size:.91rem}.links a:hover{color:var(--text)}
+    .outline{display:inline-flex!important;padding:10px 17px;border:1px solid #527568;border-radius:99px;color:var(--jade)!important;font-weight:700;white-space:nowrap}
+    .hero{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:54px;padding-top:105px;padding-bottom:102px;min-height:680px}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--jade);text-transform:uppercase;letter-spacing:.15em;font-weight:800;font-size:.73rem}
+    .dot{width:8px;height:8px;background:var(--jade);border-radius:50%;box-shadow:0 0 0 5px #71e6b013}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(2.9rem,5.3vw,5.6rem);line-height:1.06;letter-spacing:-.057em;margin:22px 0 24px}
+    h1 em{font-style:normal;background:linear-gradient(95deg,var(--jade),#b7eacc,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .intro{max-width:610px;font-size:1.16rem;color:var(--sub);line-height:1.75;margin-bottom:30px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .primary,.secondary{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:13px 21px;text-decoration:none;border-radius:11px;font-weight:750;font-size:.94rem}
+    .primary{background:var(--jade);color:#0b2419}.primary:hover{background:#a8f4d0}
+    .secondary{border:1px solid #546374;color:#e2edf4}.secondary:hover{border-color:var(--jade)}
+    .hero-foot{color:#90a1ae;font-size:.79rem;margin:24px 0 0}
+    .terminal{border:1px solid #39505a;border-radius:19px;background:linear-gradient(150deg,#142332,#0c121b 76%);box-shadow:0 32px 80px #0009,0 0 50px #71e6b00a;overflow:hidden;transform:rotate(1deg)}
+    .terminal-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #30414b;padding:15px 20px}
+    .window-dots{display:flex;gap:6px}.window-dots span{display:block;background:#4b6067;width:7px;height:7px;border-radius:50%}
+    .terminal-head small{font-size:.68rem;color:#93acb9;letter-spacing:.1em}
+    .terminal-inner{padding:26px}
+    .dash-row{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:6px;color:#b0c0cd;font-size:.81rem}
+    .large-number{font-size:2rem;font-weight:800;line-height:1.3;letter-spacing:-.04em}
+    .mock-chart{display:block;width:100%;height:auto;margin:17px 0 23px}
+    .mock-chart .axis{stroke:#2b4250;stroke-width:1}.mock-chart .line{fill:none;stroke:#71e6b0;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+    .metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+    .metric{padding:14px 11px;border:1px solid #30404c;border-radius:10px;background:#172431}
+    .metric span{display:block;color:#9bb2bf;font-size:.7rem}.metric strong{font-size:.88rem;letter-spacing:-.02em}
+    .cap{font-size:.71rem;color:#879da9;margin-top:17px;text-align:center}
+    section.block{padding:92px 0;border-top:1px solid #24313c}
+    .section-head{max-width:790px;margin-bottom:40px}
+    h2{font-size:clamp(2rem,3.5vw,3.15rem);line-height:1.16;letter-spacing:-.04em;margin:13px 0 18px}
+    .section-head p{color:var(--sub);font-size:1.05rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+    .card{padding:26px;border:1px solid #293b46;border-radius:15px;background:linear-gradient(145deg,#16232d,#101721);min-height:214px}
+    .symbol{display:grid;place-items:center;font-size:1.2rem;width:43px;height:43px;border-radius:10px;background:#203e37;color:var(--jade);margin-bottom:20px}
+    .card h3{font-size:1.06rem;margin-bottom:8px}.card p{font-size:.91rem;color:var(--sub);margin:0}
+    .split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}
+    .connector-stack{display:grid;gap:12px}
+    .connector{display:flex;align-items:center;gap:16px;padding:18px;border:1px solid #2a3e49;border-radius:12px;background:#131f2a}
+    .connector .number{font-size:.72rem;color:var(--jade);font-weight:800;border:1px solid #487365;border-radius:8px;padding:7px 9px}
+    .connector span{display:block;color:var(--sub);font-size:.8rem}
+    .connector strong{display:block;font-size:.95rem}
+    .split p{color:var(--sub)}
+    .plain-list{list-style:none;padding:0;margin:23px 0 0}
+    .plain-list li{padding:10px 0;border-top:1px solid #293944;color:#d2e0e8}
+    .plain-list li:before{content:"✓";color:var(--jade);margin-right:12px;font-weight:bold}
+    .roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .phase{border:1px solid #344451;padding:25px;border-radius:14px;background:#111b25}
+    .phase .num{color:var(--gold);font-size:.74rem;font-weight:800;letter-spacing:.1em}
+    .phase h3{margin:13px 0 8px}.phase p{font-size:.91rem;color:var(--sub);margin:0}
+    .banner{margin:5px 0 90px;border:1px solid #436959;background:linear-gradient(115deg,#1b3e35,#142a30 75%);border-radius:18px;padding:43px}
+    .banner h2{margin-top:0;font-size:clamp(1.8rem,3vw,2.6rem)}
+    .banner p{color:#c7dfd6;max-width:790px}
+    footer{border-top:1px solid #24313c;padding:29px 0 43px;color:#9db0bd;font-size:.78rem}
+    .footerline{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+    .footerline a{text-decoration:none;color:var(--jade)}
+    @media(max-width:950px){.hero{grid-template-columns:1fr;padding-top:80px;gap:50px}.terminal{max-width:650px;transform:none}.split{grid-template-columns:1fr;gap:35px}}
+    @media(max-width:720px){.wrap{padding:0 20px}.links{gap:12px}.links a:not(.outline){display:none}.links .outline{font-size:.78rem;padding:7px 12px}.brand span:last-child{font-size:.87rem}.hero{padding-top:60px;padding-bottom:75px;min-height:0}h1{font-size:clamp(2.7rem,12vw,4.2rem)}.cards,.roadmap{grid-template-columns:1fr}.metrics{gap:5px}.metric{padding:10px 7px}.metric strong{font-size:.78rem}section.block{padding:66px 0}.banner{margin-bottom:66px;padding:28px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header class="sitehead">
+  <nav class="wrap nav" aria-label="Primary">
+    <a href="#top" class="brand" aria-label="MoneyDragonApp home"><span class="logo">MD</span><span>MoneyDragon<i>App</i></span></a>
+    <div class="links">
+      <a href="#platform">Platform</a><a href="#connections">Connections</a><a href="#roadmap">Roadmap</a><a href="#about" class="outline">Explore the vision ↗</a>
+    </div>
+  </nav>
+</header>
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow"><span class="dot" aria-hidden="true"></span> Financial intelligence · In development</span>
+      <h1>The brokerage is a connection.<br><em>Intelligence is the advantage.</em></h1>
+      <p class="intro">Meet the vision for MoneyDragonApp: one research and strategy workspace designed to bring market intelligence, portfolio context, options analysis and brokerage integrations together—without locking your thinking to one trading platform.</p>
+      <div class="actions"><a class="primary" href="#platform">Discover the platform <span aria-hidden="true">↗</span></a><a class="secondary" href="#roadmap">See our roadmap <span aria-hidden="true">→</span></a></div>
+      <p class="hero-foot">Early development preview. No trading, account access, or live data is available through this page.</p>
+    </div>
+    <div class="terminal" role="img" aria-label="Illustrative MoneyDragon dashboard mockup showing a market signal chart and strategy analysis concepts. Not live data.">
+      <div class="terminal-head"><div class="window-dots"><span></span><span></span><span></span></div><small>DRAGON INTELLIGENCE / PREVIEW</small></div>
+      <div class="terminal-inner">
+        <div class="dash-row"><span>Strategy workspace</span><span style="color:var(--jade)">● Simulation concept</span></div>
+        <div class="large-number">See the full picture.</div>
+        <svg class="mock-chart" viewBox="0 0 520 224" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#71e6b0" stop-opacity=".28"/><stop offset="1" stop-color="#71e6b0" stop-opacity="0"/></linearGradient></defs>
+          <path class="axis" d="M0 40H520M0 98H520M0 156H520M0 214H520"/>
+          <path fill="url(#fill)" d="M0 171 L35 157 L69 174 L101 139 L132 146 L168 110 L200 129 L236 92 L270 106 L304 76 L340 88 L369 58 L406 74 L438 37 L468 54 L498 21 L520 26 L520 220L0 220Z"/>
+          <path class="line" d="M0 171 L35 157 L69 174 L101 139 L132 146 L168 110 L200 129 L236 92 L270 106 L304 76 L340 88 L369 58 L406 74 L438 37 L468 54 L498 21 L520 26"/>
+          <circle cx="498" cy="21" r="5.5" fill="#71e6b0"/><circle cx="498" cy="21" r="12" fill="#71e6b0" opacity=".14"/>
+        </svg>
+        <div class="metrics">
+          <div class="metric"><span>RESEARCH</span><strong>Signal lab</strong></div>
+          <div class="metric"><span>STRATEGIES</span><strong>Risk review</strong></div>
+          <div class="metric"><span>CONNECTIONS</span><strong>Broker adapters</strong></div>
+        </div>
+        <div class="cap">ILLUSTRATIVE MOCKUP • NOT MARKET DATA OR PERFORMANCE</div>
+      </div>
+    </div>
+  </div>
+  <section id="platform" class="block">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">The platform vision</span><h2>More than another trading agent.</h2><p>Trading interfaces are becoming easier to automate. Our goal is to make the reasoning, controls, and daily research process more useful—not simply put another chat window in front of a brokerage account.</p></div>
+      <div class="cards">
+        <article class="card"><div class="symbol" aria-hidden="true">◈</div><h3>Market intelligence</h3><p>Bring market signals, indicators, and research into a repeatable daily workflow.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">⌁</div><h3>Options strategy laboratory</h3><p>Study defined-risk scenarios, assumptions, liquidity, volatility and tradeoffs before taking action.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">▤</div><h3>Portfolio context</h3><p>Evaluate ideas against account holdings, available buying power, concentration and risk.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">⇄</div><h3>Brokerage connection layer</h3><p>Design around supported broker APIs so the strategy experience isn't tied to a single interface.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">✓</div><h3>Approval-first execution</h3><p>Separate research, simulation and live orders with explicit human review and defined controls.</p></article>
+        <article class="card"><div class="symbol" aria-hidden="true">◷</div><h3>Daily operating rhythm</h3><p>Turn one-off analysis into monitored, documented research reports and strategy reviews.</p></article>
+      </div>
+    </div>
+  </section>
+  <section id="connections" class="block">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Connected by design</span>
+        <h2>Bring the broker. Keep the intelligence.</h2>
+        <p>Different brokerages have different instruments, data access, execution rules and costs. MoneyDragonApp is being designed to put those differences behind carefully controlled integrations—not pretend every platform behaves the same.</p>
+        <ul class="plain-list">
+          <li>Account identity checks before financial data is displayed</li>
+          <li>Provider-specific capabilities and entitlements</li>
+          <li>Clear separation of research and trade execution</li>
+          <li>No API credentials or trading logic in the public website</li>
+        </ul>
+      </div>
+      <div class="connector-stack" aria-label="Planned technical layers">
+        <div class="connector"><span class="number">01</span><div><strong>Market and portfolio sources</strong><span>Broker APIs, supported feeds and validated account context</span></div></div>
+        <div class="connector"><span class="number">02</span><div><strong>MoneyDragon intelligence engine</strong><span>Research, scenario modeling and evidence logging</span></div></div>
+        <div class="connector"><span class="number">03</span><div><strong>Controlled decision layer</strong><span>Simulation, risk checks and explicit approvals</span></div></div>
+        <div class="connector"><span class="number">04</span><div><strong>Operational monitoring</strong><span>Daily reports, exception handling and traceable outcomes</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section id="roadmap" class="block">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Development roadmap</span><h2>Built to earn trust, one step at a time.</h2><p>This is a product direction, not a claim that all features or brokerage connections are available today.</p></div>
+      <div class="roadmap">
+        <article class="phase"><span class="num">PHASE 01 · RECOVER</span><h3>Secure the foundation</h3><p>Consolidate authentication, restore an intended-account match, verify provider responses and build a dependable read-only connection.</p></article>
+        <article class="phase"><span class="num">PHASE 02 · RESEARCH</span><h3>Prove daily usefulness</h3><p>Deliver recurring market intelligence, options analysis, strategy testing and documented paper-trading results.</p></article>
+        <article class="phase"><span class="num">PHASE 03 · EXPAND</span><h3>Earn execution privileges</h3><p>Evaluate additional integrations and tightly controlled execution only after validation, appropriate permissions and risk review.</p></article>
+      </div>
+    </div>
+  </section>
+  <section class="wrap" id="about">
+    <div class="banner">
+      <span class="eyebrow">A Highest Degree Priorities initiative</span>
+      <h2>Intelligence beyond the brokerage.</h2>
+      <p>MoneyDragonApp is an evolving financial technology project focused on independent research, strategy evaluation, and reliable operating workflows. The public experience lives here. Brokerage credentials, private processing and execution controls belong in a separate secured environment.</p>
+      <a class="secondary" href="https://github.com/grandopenauto/moneydragonapp" rel="noopener noreferrer">View public project ↗</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footerline"><div>© <span id="year">2026</span> MoneyDragonApp · Highest Degree Priorities</div><div><a href="#top">Back to top ↑</a></div></div>
+    <p style="margin-top:14px">This preview is informational and is not investment advice, a brokerage service, or an offer to execute trades. Investing and options involve risk, including possible loss of principal. No returns or future capabilities are guaranteed.</p>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
